@@ -132,21 +132,25 @@
     var sticky = document.getElementById('sticky-cta');
     if (!hero || !sticky) return;
 
+    function setStickyVisibility(isVisible) {
+      sticky.classList.toggle('opacity-0', !isVisible);
+      sticky.classList.toggle('pointer-events-none', !isVisible);
+      sticky.classList.toggle('translate-y-full', !isVisible);
+      sticky.classList.toggle('opacity-100', isVisible);
+      sticky.classList.toggle('translate-y-0', isVisible);
+      sticky.setAttribute('aria-hidden', String(!isVisible));
+      document.documentElement.classList.toggle('has-sticky-cta', isVisible);
+    }
+
     if (!window.IntersectionObserver) {
-      sticky.classList.remove('opacity-0', 'pointer-events-none');
+      setStickyVisibility(true);
       return;
     }
 
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            sticky.classList.add('opacity-0', 'pointer-events-none', 'translate-y-full');
-            sticky.classList.remove('opacity-100', 'translate-y-0');
-          } else {
-            sticky.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-full');
-            sticky.classList.add('opacity-100', 'translate-y-0');
-          }
+          setStickyVisibility(!entry.isIntersecting);
         });
       },
       { threshold: 0 }
@@ -214,6 +218,7 @@
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
       } catch (e) {}
+      document.dispatchEvent(new CustomEvent('rf:consent-updated', { detail: consent }));
     }
 
     function hideBanner() {

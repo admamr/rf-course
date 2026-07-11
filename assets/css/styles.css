@@ -89,6 +89,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   background-color: var(--bg);
@@ -879,7 +880,16 @@ main {
   opacity: 1;
 }
 @media (max-width: 768px) {
-  .cookie-banner { bottom: 96px; }
+  .cookie-banner {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    padding: 16px;
+  }
+  .has-sticky-cta .cookie-banner {
+    bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+  .cookie-banner-inner { gap: 12px; }
+  .cookie-banner-actions { gap: 6px; }
+  .cookie-btn { padding: 8px 14px; }
 }
 .cookie-banner-inner {
   max-width: 1152px;
@@ -1200,8 +1210,8 @@ main {
   outline-color: var(--gold);
 }
 .skip-link {
-  position: absolute;
-  left: -9999px;
+  position: fixed;
+  inset-inline-start: 12px;
   top: 0;
   z-index: 100;
   background: var(--gold);
@@ -1209,9 +1219,10 @@ main {
   padding: 10px 18px;
   border-radius: 0 0 var(--r-sm) var(--r-sm);
   font-weight: 700;
+  transform: translateY(-120%);
 }
 .skip-link:focus {
-  left: 12px;
+  transform: translateY(0);
 }
 
 /* ─── Rendering cost: skip offscreen sections ───────────────────────────────────

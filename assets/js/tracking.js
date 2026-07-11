@@ -1,8 +1,10 @@
-// RF Global — Event Tracking
-// Drop GA4 / Meta Pixel / GTM into the integration points below.
+// RF Global — consent-gated analytics and conversion tracking.
 
 const RFTracking = (function () {
   'use strict';
+
+  var GA4_MEASUREMENT_ID = 'G-8VHCLNJ5L0';
+  var ga4Requested = false;
 
   function getConsent() {
     try {
@@ -12,6 +14,31 @@ const RFTracking = (function () {
     return null;
   }
 
+  function hasAnalyticsConsent(consent) {
+    return Boolean(consent && consent.analytics === true);
+  }
+
+  function hasMarketingConsent(consent) {
+    return Boolean(consent && consent.marketing === true);
+  }
+
+  function ensureGA4() {
+    if (ga4Requested || !hasAnalyticsConsent(getConsent())) return;
+
+    ga4Requested = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', GA4_MEASUREMENT_ID);
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_MEASUREMENT_ID;
+    document.head.appendChild(script);
+  }
+
   function track(eventName, data) {
     if (typeof console !== 'undefined') {
       console.log('[RF Tracking]', eventName, data);
@@ -19,23 +46,25 @@ const RFTracking = (function () {
 
     var consent = getConsent();
 
-    // GA4 — only when analytics consent is true
-    if (typeof window.gtag === 'function' && consent && consent.analytics === true) {
-      window.gtag('event', eventName, { ...data, currency: 'ILS' });
+    // GA4 is loaded only after analytics consent. purchase_click is a checkout
+    // intent, never a verified purchase.
+    if (hasAnalyticsConsent(consent)) {
+      ensureGA4();
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName === 'purchase_click' ? 'begin_checkout' : eventName, {
+          ...data,
+          currency: 'ILS'
+        });
+      }
     }
 
-    // Meta Pixel — only when marketing consent is true
-    if (typeof window.fbq === 'function' && consent && consent.marketing === true) {
+    // Meta checkout intent is reserved for an actual purchase CTA click.
+    if (eventName === 'purchase_click' && typeof window.fbq === 'function' && hasMarketingConsent(consent)) {
       window.fbq('track', 'InitiateCheckout', {
         content_name: data.product_id,
         value: data.price,
         currency: 'ILS',
       });
-    }
-
-    // Google Tag Manager dataLayer
-    if (Array.isArray(window.dataLayer)) {
-      window.dataLayer.push({ event: eventName, ...data });
     }
   }
 
@@ -45,6 +74,7 @@ const RFTracking = (function () {
         track(this.getAttribute('data-event'), {
           product_id: this.getAttribute('data-product') || '',
           price: parseFloat(this.getAttribute('data-price')) || 0,
+          cta_location: this.getAttribute('data-cta-location') || '',
           label: this.textContent.trim().substring(0, 60),
         });
       });
@@ -76,7 +106,12 @@ const RFTracking = (function () {
   }
 
   function init() {
+    document.addEventListener('rf:consent-updated', function (event) {
+      if (event.detail && event.detail.analytics === true) ensureGA4();
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
+      ensureGA4();
       bindCTAEvents();
       bindSectionViews();
     });
