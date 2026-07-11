@@ -131,6 +131,7 @@
     var hero = document.getElementById('hero');
     var sticky = document.getElementById('sticky-cta');
     if (!hero || !sticky) return;
+    var stickyLink = sticky.querySelector('a');
 
     function setStickyVisibility(isVisible) {
       sticky.classList.toggle('opacity-0', !isVisible);
@@ -139,6 +140,10 @@
       sticky.classList.toggle('opacity-100', isVisible);
       sticky.classList.toggle('translate-y-0', isVisible);
       sticky.setAttribute('aria-hidden', String(!isVisible));
+      if (stickyLink) {
+        if (isVisible) stickyLink.removeAttribute('tabindex');
+        else stickyLink.setAttribute('tabindex', '-1');
+      }
       document.documentElement.classList.toggle('has-sticky-cta', isVisible);
     }
 
