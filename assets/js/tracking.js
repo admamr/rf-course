@@ -3,7 +3,6 @@
 const RFTracking = (function () {
   'use strict';
 
-  var GA4_MEASUREMENT_ID = 'G-8VHCLNJ5L0';
   var ga4Requested = false;
 
   function getConsent() {
@@ -22,8 +21,15 @@ const RFTracking = (function () {
     return Boolean(consent && consent.marketing === true);
   }
 
+  function getGA4Config() {
+    var config = window.RF_GTAG_CONFIG;
+    if (!config || typeof config.measurementId !== 'string' || typeof config.scriptUrl !== 'string') return null;
+    return config;
+  }
+
   function ensureGA4() {
-    if (ga4Requested || !hasAnalyticsConsent(getConsent())) return;
+    var config = getGA4Config();
+    if (ga4Requested || !config || !hasAnalyticsConsent(getConsent())) return;
 
     ga4Requested = true;
     window.dataLayer = window.dataLayer || [];
@@ -31,11 +37,11 @@ const RFTracking = (function () {
       window.dataLayer.push(arguments);
     };
     window.gtag('js', new Date());
-    window.gtag('config', GA4_MEASUREMENT_ID);
+    window.gtag('config', config.measurementId);
 
     var script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_MEASUREMENT_ID;
+    script.src = config.scriptUrl;
     document.head.appendChild(script);
   }
 
