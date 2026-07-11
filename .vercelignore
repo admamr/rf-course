@@ -1,0 +1,13 @@
+# Deploy only the public static site files listed below.
+/*
+
+!index-he.html
+!index-ar.html
+!privacy.html
+!terms.html
+!refunds.html
+!accessibility.html
+!assets
+!assets/**
+!vercel.json
+!.vercelignore

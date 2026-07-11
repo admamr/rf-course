@@ -1,0 +1,32 @@
+# OS and local files
+.DS_Store
+
+# Environment and credential files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.credentials
+*.secrets
+credentials/
+secrets/
+
+# Internal project documentation and assistant configuration
+claude-system/
+.claude/
+skills-lock.json
+*.pdf
+*_strategy*
+*אסטרטגיה*
+*private-notes*
+*internal-notes*
+*api-notes*
+*payment-notes*
+*automation-notes*
+
+# Dependencies and local deployment output
+node_modules/
+dist/
+.vercel/
