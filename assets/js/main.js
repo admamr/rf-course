@@ -207,13 +207,14 @@
       if (stored) existing = JSON.parse(stored);
     } catch (e) {}
 
-    if (existing) return; // consent already given
-
-    // Show banner after a short delay
-    setTimeout(function () {
-      banner.classList.add('visible');
-    }, 800);
-
+           // Show banner only for first-time visitors.
+    // Bindings below must run regardless, so returning visitors can
+    // reopen preferences from the footer.
+    if (!existing) {
+      setTimeout(function () {
+        banner.classList.add('visible');
+      }, 800);
+    }
     function saveConsent(analytics, marketing) {
       var consent = {
         analytics: analytics,
@@ -223,7 +224,9 @@
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
       } catch (e) {}
-      document.dispatchEvent(new CustomEvent('rf:consent-updated', { detail: consent }));
+      
+           document.dispatchEvent(new CustomEvent('rf:consent-updated', { detail: consent }));
+      existing = consent;
     }
 
     function hideBanner() {
@@ -239,13 +242,18 @@
       }
     }
 
-    function showModal() {
-      if (modal) {
-        modal.classList.add('visible');
-        // Focus close button
-        var closeBtn = modal.querySelector('.cookie-modal-close');
-        if (closeBtn) closeBtn.focus();
-      }
+        function showModal() {
+      if (!modal) return;
+
+      // Reflect the stored choice so toggles aren't misleading
+      var analyticsToggle = modal.querySelector('#cookie-analytics');
+      var marketingToggle = modal.querySelector('#cookie-marketing');
+      if (analyticsToggle) analyticsToggle.checked = Boolean(existing && existing.analytics);
+      if (marketingToggle) marketingToggle.checked = Boolean(existing && existing.marketing);
+
+      modal.classList.add('visible');
+      var closeBtn = modal.querySelector('.cookie-modal-close');
+      if (closeBtn) closeBtn.focus();
     }
 
     // Accept all
