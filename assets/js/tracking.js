@@ -4,6 +4,14 @@ const RFTracking = (function () {
   'use strict';
 
   var ga4Requested = false;
+  var metaRequested = false;
+  var DEBUG = false; // set true locally to see events in console
+
+  function log() {
+    if (DEBUG && typeof console !== 'undefined') {
+      console.log.apply(console, ['[RF Tracking]'].concat([].slice.call(arguments)));
+    }
+  }
 
   function getConsent() {
     try {
@@ -20,6 +28,13 @@ const RFTracking = (function () {
   function hasMarketingConsent(consent) {
     return Boolean(consent && consent.marketing === true);
   }
+
+  // Shared id so browser (Pixel) and server (CAPI) events deduplicate.
+  function makeEventId(name) {
+    return name + '.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10);
+  }
+
+  /* ───────────────────────────── GA4 ───────────────────────────── */
 
   function getGA4Config() {
     var config = window.RF_GTAG_CONFIG;
@@ -43,12 +58,55 @@ const RFTracking = (function () {
     script.async = true;
     script.src = config.scriptUrl;
     document.head.appendChild(script);
+
+    log('GA4 loaded');
   }
 
+  /* ────────────────────────── META PIXEL ────────────────────────── */
+
+  function getMetaConfig() {
+    var config = window.RF_META_CONFIG;
+    if (!config || typeof config.pixelId !== 'string') return null;
+    return config;
+  }
+
+  function ensureMetaPixel() {
+    var config = getMetaConfig();
+    if (metaRequested || !config || !hasMarketingConsent(getConsent())) return;
+
+    metaRequested = true;
+
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    window.fbq('init', config.pixelId);
+    window.fbq('track', 'PageView', {}, { eventID: makeEventId('PageView') });
+
+    window.fbq('track', 'ViewContent', {
+      content_name: config.pageName || document.title,
+      content_category: 'Course',
+      content_ids: ['entry-course'],
+      content_type: 'product',
+      value: 149.00,
+      currency: 'ILS'
+    }, { eventID: makeEventId('ViewContent') });
+
+    log('Meta Pixel loaded', config.pixelId);
+  }
+
+  /* ──────────────────────────── TRACK ──────────────────────────── */
+
   function track(eventName, data) {
-    if (typeof console !== 'undefined') {
-      console.log('[RF Tracking]', eventName, data);
-    }
+    log(eventName, data);
 
     var consent = getConsent();
 
@@ -59,20 +117,29 @@ const RFTracking = (function () {
       if (typeof window.gtag === 'function') {
         window.gtag('event', eventName === 'purchase_click' ? 'begin_checkout' : eventName, {
           ...data,
-          currency: 'ILS'
+          currency: data.currency || 'ILS'
         });
       }
     }
 
     // Meta checkout intent is reserved for an actual purchase CTA click.
-    if (eventName === 'purchase_click' && typeof window.fbq === 'function' && hasMarketingConsent(consent)) {
-      window.fbq('track', 'InitiateCheckout', {
-        content_name: data.product_id,
-        value: data.price,
-        currency: 'ILS',
-      });
+    if (eventName === 'purchase_click' && hasMarketingConsent(consent)) {
+      ensureMetaPixel();
+      if (typeof window.fbq === 'function') {
+        var courseId = (data.product_id || 'entry_course').replace(/_course$/, '');
+        window.fbq('track', 'InitiateCheckout', {
+          content_name: data.product_id || 'entry_course',
+          content_ids: [courseId + '-course'],
+          content_type: 'product',
+          value: data.price || 149,
+          currency: data.currency || 'ILS',
+          num_items: 1
+        }, { eventID: makeEventId('InitiateCheckout') });
+      }
     }
   }
+
+  /* ──────────────────────────── BINDINGS ───────────────────────── */
 
   function bindCTAEvents() {
     document.querySelectorAll('[data-event]').forEach(function (el) {
@@ -80,6 +147,7 @@ const RFTracking = (function () {
         track(this.getAttribute('data-event'), {
           product_id: this.getAttribute('data-product') || '',
           price: parseFloat(this.getAttribute('data-price')) || 0,
+          currency: this.getAttribute('data-currency') || 'ILS',
           cta_location: this.getAttribute('data-cta-location') || '',
           label: this.textContent.trim().substring(0, 60),
         });
@@ -111,13 +179,18 @@ const RFTracking = (function () {
     });
   }
 
+  /* ───────────────────────────── INIT ──────────────────────────── */
+
   function init() {
     document.addEventListener('rf:consent-updated', function (event) {
-      if (event.detail && event.detail.analytics === true) ensureGA4();
+      if (!event.detail) return;
+      if (event.detail.analytics === true) ensureGA4();
+      if (event.detail.marketing === true) ensureMetaPixel();
     });
 
     document.addEventListener('DOMContentLoaded', function () {
       ensureGA4();
+      ensureMetaPixel();
       bindCTAEvents();
       bindSectionViews();
     });
