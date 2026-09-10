@@ -141,16 +141,38 @@ const RFTracking = (function () {
 
   /* ──────────────────────────── BINDINGS ───────────────────────── */
 
-  function bindCTAEvents() {
+    function bindCTAEvents() {
     document.querySelectorAll('[data-event]').forEach(function (el) {
-      el.addEventListener('click', function () {
-        track(this.getAttribute('data-event'), {
-          product_id: this.getAttribute('data-product') || '',
-          price: parseFloat(this.getAttribute('data-price')) || 0,
-          currency: this.getAttribute('data-currency') || 'ILS',
-          cta_location: this.getAttribute('data-cta-location') || '',
-          label: this.textContent.trim().substring(0, 60),
-        });
+      el.addEventListener('click', function (e) {
+        var self = this;
+        var eventName = self.getAttribute('data-event');
+        var href = self.getAttribute('href');
+
+        function send() {
+          track(eventName, {
+            product_id: self.getAttribute('data-product') || '',
+            price: parseFloat(self.getAttribute('data-price')) || 0,
+            currency: self.getAttribute('data-currency') || 'ILS',
+            cta_location: self.getAttribute('data-cta-location') || '',
+            label: self.textContent.trim().substring(0, 60),
+          });
+        }
+
+        // Modifier click, middle click, or target=_blank: page stays open,
+        // no race. Let the browser do its thing.
+        var opensElsewhere = e.metaKey || e.ctrlKey || e.shiftKey ||
+                             e.button === 1 || self.target === '_blank';
+
+        var isOutbound = href && /^https?:\/\//.test(href) &&
+                         href.indexOf(location.hostname) === -1;
+
+        if (isOutbound && !opensElsewhere) {
+          e.preventDefault();
+          send();
+          setTimeout(function () { window.location.href = href; }, 250);
+        } else {
+          send();
+        }
       });
     });
   }
