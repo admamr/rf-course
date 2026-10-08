@@ -36,10 +36,12 @@ const RFTracking = (function () {
 
   /* ───────────────────────────── GA4 ───────────────────────────── */
 
-  function getGA4Config() {
+    function getGA4Config() {
     var config = window.RF_GTAG_CONFIG;
-    if (!config || typeof config.measurementId !== 'string' || typeof config.scriptUrl !== 'string') return null;
-    return config;
+    if (!config || typeof config.scriptUrl !== 'string') return null;
+    var ids = config.measurementIds || (config.measurementId ? [config.measurementId] : null);
+    if (!ids || !ids.length) return null;
+    return { ids: ids, scriptUrl: config.scriptUrl };
   }
 
   function ensureGA4() {
@@ -52,7 +54,9 @@ const RFTracking = (function () {
       window.dataLayer.push(arguments);
     };
     window.gtag('js', new Date());
-    window.gtag('config', config.measurementId);
+        config.ids.forEach(function (id) {
+      window.gtag('config', id);
+    });
 
     var script = document.createElement('script');
     script.async = true;
