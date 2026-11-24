@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>נרשמת | קורס Entry | RF Global</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#010f0a">
+
+  <!-- Fonts: preconnect + Hebrew family only (display=swap), loaded early in <head> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap"></noscript>
+
+  <!-- Prebuilt Tailwind (static CSS; replaces the render-blocking Play CDN runtime compiler) -->
+  <link rel="stylesheet" href="assets/css/tailwind.build.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Google tag (gtag.js), activated by tracking.js only after analytics consent -->
+  <script>
+    window.RF_GTAG_CONFIG = {
+      measurementId: 'G-8VHCLNJ5L0',
+      scriptUrl: 'https://www.googletagmanager.com/gtag/js?id=G-8VHCLNJ5L0'
+    };
+  </script>
+
+  <!-- Welcome celebration -->
+  <style>
+    .wl-check{width:88px;height:88px;margin:0 auto 1.75rem;display:block;position:relative}
+    .wl-check svg{width:100%;height:100%;overflow:visible}
+    .wl-ring{fill:rgba(189,134,4,.08);stroke:#bd8604;stroke-width:3;stroke-dasharray:252;stroke-dashoffset:252;
+      animation:wl-draw .7s cubic-bezier(.65,0,.35,1) .15s forwards}
+    .wl-tick{fill:none;stroke:#34d399;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;
+      stroke-dasharray:60;stroke-dashoffset:60;animation:wl-draw .45s cubic-bezier(.65,0,.35,1) .75s forwards}
+    .wl-check::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(189,134,4,.55);
+      opacity:0;animation:wl-pulse 1.4s ease-out 1.05s 2}
+    @keyframes wl-draw{to{stroke-dashoffset:0}}
+    @keyframes wl-pulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.45);opacity:0}}
+
+    .wl-in{opacity:0;transform:translateY(14px);animation:wl-up .6s cubic-bezier(.22,1,.36,1) forwards}
+    .wl-d1{animation-delay:.9s}.wl-d2{animation-delay:1.05s}.wl-d3{animation-delay:1.2s}.wl-d4{animation-delay:1.35s}.wl-d5{animation-delay:1.5s}
+    @keyframes wl-up{to{opacity:1;transform:none}}
+
+    .wl-days{display:flex;justify-content:center;gap:.5rem;margin:0 auto 2.25rem}
+    .wl-day{width:44px;height:6px;border-radius:999px;background:rgba(125,143,136,.22)}
+    .wl-day.is-open{background:linear-gradient(90deg,#bd8604,#e0b13a);box-shadow:0 0 14px rgba(189,134,4,.55)}
+    .wl-days-label{font-size:.8rem;color:#a8bcb4;margin-bottom:.6rem}
+
+    .wl-confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+
+    @media (prefers-reduced-motion: reduce){
+      .wl-ring,.wl-tick{animation:none;stroke-dashoffset:0}
+      .wl-check::after{display:none}
+      .wl-in{animation:none;opacity:1;transform:none}
+    }
+  </style>
+</head>
+
+<body class="rf-bg font-sans text-rf-white">
+
+<a href="#main" class="skip-link">דלג לתוכן הראשי</a>
+
+<!-- ═══════════════════════════════════════════════════════════ HEADER -->
+<header class="site-header fixed top-0 inset-x-0 z-40">
+  <div class="site-header-inner max-w-6xl mx-auto px-5 flex items-center justify-between gap-4">
+    <a href="https://rf-course.vercel.app/entry" class="flex items-center gap-2 flex-shrink-0" aria-label="RF Global, עמוד הקורס">
+      <img src="assets/logo-icon.jpg" alt="RF Global" width="40" height="36" decoding="async" class="h-9 w-auto object-contain rounded" />
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════════════════════════════════════════════════════ WELCOME -->
+<section id="welcome" class="pt-28 pb-16 md:pt-36 md:pb-24 px-5" data-section="welcome">
+  <div class="max-w-2xl mx-auto text-center">
+    <div class="wl-check" aria-hidden="true">
+      <svg viewBox="0 0 88 88"><circle class="wl-ring" cx="44" cy="44" r="40"/><path class="wl-tick" d="M27 45.5l11.5 11.5L62 33"/></svg>
+    </div>
+
+    <h1 class="wl-in wl-d1 fs-h2 text-rf-white mb-6">נרשמת. השיעור הראשון פתוח עכשיו.</h1>
+
+    <p class="wl-in wl-d2 fs-lead mb-6">כל יום ייפתח שיעור חדש, חמישה ימים.</p>
+
+    <div class="wl-in wl-d3">
+      <p class="wl-days-label">שיעור 1 מתוך 5 פתוח</p>
+      <div class="wl-days" role="img" aria-label="השיעור הראשון פתוח, ארבעת הבאים נפתחים שיעור ביום">
+        <span class="wl-day is-open"></span><span class="wl-day"></span><span class="wl-day"></span><span class="wl-day"></span><span class="wl-day"></span>
+      </div>
+    </div>
+
+    <p class="wl-in wl-d4 text-rf-soft leading-relaxed mb-10 max-w-xl mx-auto">שלחנו לך מייל עם קישור כניסה. אם הוא לא בתיבת הדואר, תחפש בלשונית Promotions והעבר אותו לאזור הראשי.</p>
+
+    <div class="wl-in wl-d5">
+    <a href="https://my.schooler.biz/s/120577/EntryRFGlobal"
+       class="btn-primary btn-lg w-full sm:w-auto"
+       data-event="lesson1_click"
+       data-product="entry_course"
+       data-course="entry"
+       data-cta-location="welcome">
+      כניסה לשיעור הראשון
+    </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════ FOOTER -->
+<footer class="border-t border-[rgba(189,134,4,0.1)] py-12 px-5 bg-[rgba(1,9,6,0.6)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/logo-icon.jpg" alt="RF Global" width="40" height="36" loading="lazy" decoding="async" class="h-9 w-auto object-contain rounded" />
+        </div>
+        <p class="text-rf-soft text-sm max-w-xs leading-relaxed mb-4">
+          מערכת קבלת החלטות בנדל"ן אמריקאי, מבוססת ניתוח, לא הבטחות.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/rf.global/" aria-label="Instagram" target="_blank" rel="noopener" class="text-rf-muted hover:text-rf-gl transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/people/RF-Global-Real-Estate-Investments/100093468674023/" aria-label="Facebook" target="_blank" rel="noopener" class="text-rf-muted hover:text-rf-gl transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://rf-course.vercel.app/" aria-label="אתר RF Global" target="_blank" rel="noopener" class="text-rf-muted hover:text-rf-gl transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <nav aria-label="ניווט תחתון">
+        <div class="footer-legal-links">
+          <a href="privacy.html">מדיניות פרטיות</a>
+          <a href="terms.html">תנאי שימוש</a>
+          <a href="refunds.html">מדיניות החזרים</a>
+          <a href="accessibility.html">נגישות</a>
+          <button type="button" data-cookie-manage>העדפות עוגיות</button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Legal -->
+    <div class="border-t border-[rgba(189,134,4,0.08)] pt-8">
+      <p class="text-rf-muted text-xs leading-relaxed max-w-3xl">
+        <strong class="text-rf-soft font-semibold">הצהרת גילוי נאות:</strong> RF Global מספק תוכן חינוכי בלבד בנושא השקעות נדל"ן. שום תוכן בקורס זה אינו מהווה ייעוץ פיננסי, משפטי, מיסויי או השקעתי. תשואות עבר אינן מעידות על תשואות עתיד. כל השקעה כרוכה בסיכון, לרבות אובדן קרן. לפני כל צעד השקעה יש לפנות ליועץ פיננסי, עורך דין ורואה חשבון מוסמכים.
+      </p>
+      <p class="text-rf-muted text-xs mt-3 opacity-70">© 2026 RF Global. כל הזכויות שמורות.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════ COOKIE CONSENT BANNER -->
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="הודעת עוגיות">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">
+      אנחנו משתמשים בעוגיות כדי לשפר את חוויית השימוש, למדוד ביצועים ולהפעיל מדידה שיווקית. ניתן לאשר, לדחות או לנהל העדפות.
+    </p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-accept>אישור</button>
+      <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-reject>דחייה</button>
+      <button type="button" class="cookie-btn cookie-btn-manage" data-cookie-manage>ניהול העדפות</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ COOKIE PREFERENCES MODAL -->
+<div id="cookie-modal" class="cookie-modal-overlay" role="dialog" aria-modal="true" aria-label="העדפות עוגיות">
+  <div class="cookie-modal">
+    <div class="cookie-modal-header">
+      <h2 class="cookie-modal-title">העדפות עוגיות</h2>
+      <button type="button" class="cookie-modal-close" data-cookie-modal-close aria-label="סגור">✕</button>
+    </div>
+    <div class="cookie-modal-body">
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <span class="cookie-category-label">הכרחיות</span>
+          <span class="cookie-category-status">פעילות תמיד</span>
+        </div>
+        <p class="cookie-category-desc">נדרשות לתפקוד בסיסי של האתר. תמיד פעילות.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <span class="cookie-category-label">אנליטיקה</span>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="cookie-analytics" />
+            <span class="cookie-toggle-track"></span>
+          </label>
+        </div>
+        <p class="cookie-category-desc">עוזרות לנו להבין כיצד משתמשים באתר כדי לשפר אותו.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <span class="cookie-category-label">שיווק</span>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="cookie-marketing" />
+            <span class="cookie-toggle-track"></span>
+          </label>
+        </div>
+        <p class="cookie-category-desc">מאפשרות מדידה שיווקית והתאמת מודעות.</p>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-modal-close>ביטול</button>
+      <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-save>שמירה</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/tracking.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script>
+  // Lead event for the free Entry course. Fires once per browser session, only after
+  // analytics consent (tracking.js gates GA4). If consent is given later on this page,
+  // it fires then. event_id is sent so pixel + CAPI can deduplicate later.
+  (function () {
+    var KEY = 'rf_lead_fired';
+    var LANG = 'he';
+
+    function hasAnalyticsConsent() {
+      try {
+        var c = JSON.parse(localStorage.getItem('rf_cookie_consent') || 'null');
+        return Boolean(c && c.analytics === true);
+      } catch (e) { return false; }
+    }
+
+    function alreadyFired() {
+      try { return Boolean(sessionStorage.getItem(KEY)); } catch (e) { return false; }
+    }
+
+    function makeEventId() {
+      if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+      return 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    }
+
+    function fireLead() {
+      if (alreadyFired() || !hasAnalyticsConsent() || typeof RFTracking === 'undefined') return;
+      var eventId = makeEventId();
+      RFTracking.track('generate_lead', {
+        event_id: eventId,
+        product_id: 'entry_course',
+        lang: LANG
+      });
+      // META PIXEL (not installed yet): once the pixel base code is on the site, add:
+      // if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'entry_course' }, { eventID: eventId });
+      try { sessionStorage.setItem(KEY, eventId); } catch (e) {}
+    }
+
+    document.addEventListener('DOMContentLoaded', fireLead);
+    document.addEventListener('rf:consent-updated', function () { setTimeout(fireLead, 0); });
+  })();
+</script>
+<script>
+  // One-shot confetti burst. Skipped for prefers-reduced-motion. Removes itself when done.
+  (function () {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function burst() {
+      var c = document.createElement('canvas');
+      c.className = 'wl-confetti';
+      c.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(c);
+      var ctx = c.getContext('2d');
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      function size() { c.width = innerWidth * dpr; c.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+      size(); addEventListener('resize', size);
+
+      var colors = ['#bd8604', '#e0b13a', '#f5d27a', '#34d399', '#fefefe', '#1f7a52'];
+      var W = innerWidth, H = innerHeight, parts = [];
+      var count = W < 640 ? 110 : 170;
+      for (var i = 0; i < count; i++) {
+        var fromLeft = i % 2 === 0;
+        parts.push({
+          x: fromLeft ? -10 : W + 10,
+          y: H * (0.55 + Math.random() * 0.25),
+          vx: (fromLeft ? 1 : -1) * (4 + Math.random() * 7),
+          vy: -(9 + Math.random() * 9),
+          w: 6 + Math.random() * 6, h: 8 + Math.random() * 8,
+          r: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.35,
+          tilt: Math.random() * Math.PI, vt: 0.08 + Math.random() * 0.12,
+          color: colors[(Math.random() * colors.length) | 0],
+          round: Math.random() < 0.25
+        });
+      }
+      var start = performance.now(), DURATION = 4200;
+      function frame(now) {
+        var t = now - start;
+        ctx.clearRect(0, 0, c.width, c.height);
+        var fade = t > DURATION - 900 ? Math.max(0, (DURATION - t) / 900) : 1;
+        ctx.globalAlpha = fade;
+        for (var i = 0; i < parts.length; i++) {
+          var p = parts[i];
+          p.vy += 0.28; p.vx *= 0.985; p.vy *= 0.985;
+          p.x += p.vx; p.y += p.vy; p.r += p.vr; p.tilt += p.vt;
+          ctx.save();
+          ctx.translate(p.x, p.y); ctx.rotate(p.r);
+          ctx.fillStyle = p.color;
+          if (p.round) { ctx.beginPath(); ctx.arc(0, 0, p.w / 2, 0, Math.PI * 2); ctx.fill(); }
+          else { ctx.fillRect(-p.w / 2, -p.h / 2 * Math.abs(Math.cos(p.tilt)), p.w, p.h * Math.abs(Math.cos(p.tilt))); }
+          ctx.restore();
+        }
+        if (t < DURATION) requestAnimationFrame(frame);
+        else { removeEventListener('resize', size); c.remove(); }
+      }
+      requestAnimationFrame(frame);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(burst, 650); });
+    else setTimeout(burst, 650);
+  })();
+</script>
+</body>
+</html>

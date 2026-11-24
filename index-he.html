@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>קורס Entry | ניתוח השקעות נדל"ן בארה"ב | RF Global</title>
+  <meta name="description" content="גלה אם השקעה בנדל&quot;ן באמריקה מתאימה לך. קורס Entry של RF Global: חמישה שיעורים קצרים, שיעור ביום, ללמוד לקרוא את המספרים ולהחליט בעצמך." />
+  <link rel="canonical" href="https://rf-course.vercel.app/entry" />
+  <link rel="alternate" hreflang="he" href="https://rf-course.vercel.app/entry" />
+  <link rel="alternate" hreflang="ar" href="https://rf-course.vercel.app/entry-ar" />
+  <link rel="alternate" hreflang="x-default" href="https://rf-course.vercel.app/entry" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="קורס Entry של RF Global, הדרך להחליט נכון בנדל״ן אמריקאי">
+  <meta property="og:description" content="למדו לנתח עסקאות נדל״ן בארה״ב בשיטה מסודרת, לפי מספרים ולא לפי ניחוש.">
+  <meta property="og:image" content="https://rf-course.vercel.app/assets/OGI/og-he.png">
+  <meta property="og:image:secure_url" content="https://rf-course.vercel.app/assets/OGI/og-he.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://rf-course.vercel.app/entry">
+  <meta property="og:site_name" content="RF Global">
+  <meta property="og:locale" content="he_IL">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="קורס Entry של RF Global, הדרך להחליט נכון בנדל״ן אמריקאי">
+  <meta name="twitter:description" content="למדו לנתח עסקאות נדל״ן בארה״ב בשיטה מסודרת, לפי מספרים ולא לפי ניחוש.">
+  <meta name="twitter:image" content="https://rf-course.vercel.app/assets/OGI/og-he.png">
+
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#010f0a">
+
+  <!-- Fonts: preconnect + Hebrew family only (display=swap), loaded early in <head> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap"></noscript>
+
+  <!-- Prebuilt Tailwind (static CSS; replaces the render-blocking Play CDN runtime compiler) -->
+  <link rel="preload" as="image" href="assets/hero-home.jpg" imagesrcset="assets/hero-home-800.jpg 800w, assets/hero-home.jpg 1200w" imagesizes="100vw">
+  <link rel="stylesheet" href="assets/css/tailwind.build.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Hero background treatment -->
+  <style>
+    .hero-bg{position:relative;overflow:hidden;isolation:isolate;
+      padding-top:8.5rem;padding-bottom:5rem;background-color:#010f0a}
+    .hero-media{position:absolute;inset:0;pointer-events:none}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:32% 50%;display:block}
+    .hero-media::after{content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(130% 95% at 50% 40%, rgba(1,43,26,.20) 0%, rgba(1,15,10,.46) 62%, rgba(1,15,10,.80) 100%),
+        linear-gradient(180deg, rgba(1,15,10,.82) 0%, rgba(1,15,10,.30) 32%, rgba(1,15,10,.55) 74%, #010f0a 100%)}
+    .hero-content{position:relative}
+    .hero-title{text-shadow:0 2px 24px rgba(1,15,10,.85),0 1px 3px rgba(1,15,10,.9)}
+    .hero-title .text-gold{background:none;-webkit-text-fill-color:#bd8604;color:#bd8604}
+    .hero-lead{color:#dfe9e4;text-shadow:0 1px 14px rgba(1,15,10,.9)}
+    .hero-note{color:#a8bcb4;text-shadow:0 1px 10px rgba(1,15,10,.9)}
+    @media (min-width:768px){.hero-media img{object-position:50% 46%}
+      .hero-bg{padding-top:11rem;padding-bottom:7.5rem;min-height:86vh;
+      display:flex;align-items:center}
+      .hero-content{width:100%}}
+  </style>
+
+  <!-- Founders + projects -->
+  <style>
+    .rf-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;max-width:560px;margin:0 auto}
+    .rf-team-card{padding:1rem;text-align:center}
+    .rf-team-photo{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:14px;display:block;background:#022b1a}
+    .rf-proj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    @media (min-width:900px){.rf-proj-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}}
+    .rf-proj-card{overflow:hidden;padding:0}
+    .rf-proj-img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+    .rf-proj-body{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.8rem 1rem}
+    .rf-status{display:inline-flex;align-items:center;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;white-space:nowrap}
+    .rf-status.is-sold{color:#bd8604;background:rgba(189,134,4,.1);border:1px solid rgba(189,134,4,.28)}
+    .rf-status.is-rented{color:#34d399;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.24)}
+  </style>
+
+  <!-- Google tag (gtag.js), activated by tracking.js only after analytics consent -->
+  <script>
+    window.RF_GTAG_CONFIG = {
+      measurementId: 'G-8VHCLNJ5L0',
+      scriptUrl: 'https://www.googletagmanager.com/gtag/js?id=G-8VHCLNJ5L0'
+    };
+  </script>
+
+  <!-- Schema: Organization -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"RF Global","url":"https://rf-course.vercel.app","contactPoint":{"@type":"ContactPoint","email":"flamminstudio@gmail.com","contactType":"customer service"}}
+  </script>
+
+  <!-- Schema: Course -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Course","name":"קורס Entry: ניתוח השקעות נדל\"ן בארה\"ב","description":"קורס הכניסה של RF Global למערכת קבלת ההחלטות בנדל\"ן אמריקאי. לומדים לנתח עסקאות על בסיס מספרים, לבחון מימון וסיכון ולהחליט בצורה מובנית.","provider":{"@type":"Organization","name":"RF Global","url":"https://rf-course.vercel.app"},"offers":{"@type":"Offer","price":"0","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://rf-course.vercel.app/entry"},"educationalLevel":"Beginner","inLanguage":"he","about":{"@type":"Thing","name":"השקעות נדל\"ן בארה\"ב"}}
+  </script>
+
+
+  <!-- Schema: Breadcrumb -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"RF Global","item":"https://rf-course.vercel.app"},{"@type":"ListItem","position":2,"name":"קורס Entry","item":"https://rf-course.vercel.app/entry"}]}
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"כמה זמן זה לוקח?","acceptedAnswer":{"@type":"Answer","text":"שעה וחצי בסך הכול, מפוזרת על חמישה ימים."}},{"@type":"Question","name":"צריך הון עצמי?","acceptedAnswer":{"@type":"Answer","text":"לא. הקורס הוא לימודי."}},{"@type":"Question","name":"יש הבטחת תשואה?","acceptedAnswer":{"@type":"Answer","text":"אין. אף אחד לא יכול להבטיח לך תשואה."}},{"@type":"Question","name":"אני לא מבין בנדל\"ן, זה מתאים לי?","acceptedAnswer":{"@type":"Answer","text":"כן. בשביל זה בדיוק הוא נבנה."}}]}
+  </script>
+</head>
+
+<body class="rf-bg font-sans text-rf-white">
+
+<a href="#main" class="skip-link">דלג לתוכן הראשי</a>
+
+<!-- ═══════════════════════════════════════════════════════════ HEADER -->
+<header class="site-header fixed top-0 inset-x-0 z-40">
+  <div class="site-header-inner max-w-6xl mx-auto px-5 flex items-center justify-between gap-4">
+
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-2 flex-shrink-0" aria-label="RF Global, דף הבית">
+      <img src="assets/logo-icon.jpg" alt="RF Global" width="40" height="36" decoding="async" class="h-9 w-auto object-contain rounded" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="ניווט ראשי">
+      <a href="#method" class="nav-link">השיטה</a>
+      <a href="#course" class="nav-link">הקורס</a>
+      <a href="#faq"    class="nav-link">שאלות</a>
+    </nav>
+
+    <!-- Right side: lang + CTA -->
+    <div class="header-actions flex items-center gap-3">
+      <a href="https://rf-course.vercel.app/entry-ar" class="hidden sm:inline-flex lang-chip" aria-label="عربي, מעבר לגרסה הערבית">
+        <span>عربي</span>
+      </a>
+      <a href="https://my.schooler.biz/s/120577/EntryRFGlobal"
+   class="hidden md:inline-flex btn-primary text-sm"
+   style="padding:10px 20px"
+   data-event="signup_click"
+   data-product="entry_course"
+   data-course="entry"
+   data-cta-location="header">
+  התחל בחינם
+</a>
+      <!-- Mobile hamburger -->
+      <button id="nav-toggle"
+              class="md:hidden flex flex-col gap-1.5 p-2"
+              aria-label="פתח תפריט"
+              aria-expanded="false"
+              aria-controls="nav-menu">
+        <span class="w-5 h-0.5 bg-rf-white rounded"></span>
+        <span class="w-5 h-0.5 bg-rf-white rounded"></span>
+        <span class="w-5 h-0.5 bg-rf-white rounded"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav Overlay -->
+<div id="nav-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+  <button type="button" class="nav-close absolute top-5 left-5 w-10 h-10 rounded-lg border border-[rgba(125,143,136,0.25)] text-rf-soft flex items-center justify-center" aria-label="סגור תפריט" data-nav-close>✕</button>
+  <a href="#method">השיטה</a>
+  <a href="#course">הקורס</a>
+  <a href="#faq">שאלות</a>
+  <a href="https://rf-course.vercel.app/entry-ar" class="text-rf-gl">عربي</a>
+  <a href="https://my.schooler.biz/s/120577/EntryRFGlobal"
+   class="btn-primary mt-4"
+   data-event="signup_click"
+   data-product="entry_course"
+   data-course="entry"
+   data-cta-location="mobile_menu">
+  התחל בחינם
+</a>
+</div>
+
+<main id="main">
+
+<!-- ═══════════════════════════════════════════════════════════ HERO -->
+<section id="hero" class="hero-bg px-5" data-section="hero">
+
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/hero-home.jpg"
+         srcset="assets/hero-home-800.jpg 800w, assets/hero-home.jpg 1200w"
+         sizes="100vw"
+         width="1200" height="800"
+         alt=""
+         fetchpriority="high" decoding="async" />
+  </div>
+
+  <div class="hero-content max-w-3xl mx-auto text-center">
+    <div class="reveal mb-6">
+      <span class="rf-badge">RF Global · קורס Entry</span>
+    </div>
+
+    <h1 class="reveal reveal-d1 fs-display text-rf-white mb-6 hero-title">
+      גלה אם השקעה בנדל"ן באמריקה
+      <span class="text-gold">מתאימה לך</span>
+    </h1>
+
+    <p class="reveal reveal-d2 fs-lead mb-4 max-w-xl mx-auto hero-lead">
+      חמישה שיעורים קצרים. שיעור ביום. בלי לשלם שקל.
+    </p>
+    <p class="reveal reveal-d2 mb-8 max-w-xl mx-auto hero-lead">
+      לא נמכור לך חלום. תלמד לקרוא את המספרים ולהחליט בעצמך.
+    </p>
+
+    <div class="reveal reveal-d3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-6">
+      <a href="https://my.schooler.biz/s/120577/EntryRFGlobal"
+         class="btn-primary btn-lg w-full sm:w-auto"
+         data-event="signup_click"
+         data-product="entry_course"
+         data-course="entry"
+         data-cta-location="hero">
+        התחל בחינם
+      </a>
+      <a href="#course" class="btn-ghost w-full sm:w-auto">
+        מה תלמד
+      </a>
+    </div>
+
+    <p class="reveal reveal-d3 text-sm hero-note">
+      השיעור הראשון נפתח עכשיו
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ TRUST BAND -->
+<section class="px-5 py-5 border-y border-[rgba(189,134,4,0.1)] bg-[rgba(2,43,26,0.18)]" aria-label="נקודות אמון">
+  <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+    <div class="flex items-center gap-2 text-sm">
+      <svg class="w-4 h-4 text-rf-gl flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13.5h3.5V21H3zM10.25 3h3.5v18h-3.5zM17.5 9H21v12h-3.5z"/></svg>
+      <span class="text-rf-soft">ניתוח מבוסס נתונים</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm">
+      <svg class="w-4 h-4 text-rf-gl flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 5.636a9 9 0 1012.728 12.728A9 9 0 005.636 5.636zM5.636 5.636l12.728 12.728"/></svg>
+      <span class="text-rf-soft">ללא הבטחות תשואה</span>
+    </div>
+    <div class="flex items-center gap-2 text-sm">
+      <svg class="w-4 h-4 text-rf-gl flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      <span class="text-rf-soft">שיטה מובנית, לא תיאוריה</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ PROBLEM -->
+<section id="problem" class="py-20 md:py-28 px-5" data-section="problem">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-14 max-w-2xl">
+      <p class="reveal eyebrow mb-4">האבחנה</p>
+      <h2 class="reveal reveal-d1 fs-h2 text-rf-white mb-5">
+        הבעיה לא חוסר מידע.<br />הבעיה היא חוסר שיטה.
+      </h2>
+      <p class="reveal reveal-d2 fs-lead">
+        אתה יודע שנדל"ן אמריקאי הוא הזדמנות. קראת עליו, צפית בסרטונים, שמעת פודקאסטים. אבל כשמגיעה עסקה אמיתית, אתה לא יודע מה לבדוק ואיך להחליט.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="reveal rf-card is-interactive p-6">
+        <div class="icon-chip mb-4">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="fs-h3 text-rf-white mb-2">מידע ללא מסגרת</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">ראית שעות של תוכן, אבל אין לך שיטה ברורה לקחת מספרים ולהגיע מהם להחלטה.</p>
+      </div>
+
+      <div class="reveal reveal-d1 rf-card is-interactive p-6">
+        <div class="icon-chip mb-4">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </div>
+        <h3 class="fs-h3 text-rf-white mb-2">פחד מהטעות הראשונה</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">העלות של כניסה לעסקה לא נכונה גדולה. הפחד הזה אמיתי, והוא חוסם אותך מלהתקדם.</p>
+      </div>
+
+      <div class="reveal reveal-d2 rf-card is-interactive p-6">
+        <div class="icon-chip mb-4">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="fs-h3 text-rf-white mb-2">החלטה מבוססת תחושה</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">בלי מדדים ברורים, ההחלטה נופלת על תחושת בטן. זו לא שיטת ניתוח, זה ניחוש.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ MARKET -->
+<section id="market" class="py-20 md:py-28 px-5" data-section="market">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+      <div class="flex-1">
+        <p class="reveal eyebrow mb-4">ההזדמנות</p>
+        <h2 class="reveal reveal-d1 fs-h2 text-rf-white mb-5">
+          שוק של טריליונים שדורש שיטת ניתוח ברורה
+        </h2>
+        <p class="reveal reveal-d2 fs-lead mb-6">
+          שוק הנדל"ן האמריקאי הוא אחד הגדולים והנזילים בעולם. אבל הגודל לא מחליף שיטת ניתוח: הניתוח בא לפני הכניסה.
+        </p>
+        <p class="reveal reveal-d3 text-rf-soft leading-relaxed">
+          משקיעים שנכנסים ללא הכנה מספקת עושים טעויות יקרות. מי שיודע לקרוא עסקה יכול להחליט בצורה מושכלת. מי שלא, מנחש.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ METHOD -->
+<section id="method" class="py-20 md:py-28 px-5" data-section="method">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="reveal eyebrow is-centered mb-4">שיטת ה-RF</p>
+      <h2 class="reveal reveal-d1 fs-h2 text-rf-white mb-5">
+        5 שלבים להחלטה מבוססת נתונים
+      </h2>
+      <p class="reveal reveal-d2 fs-lead max-w-2xl mx-auto">
+        שיטת ה-RF אינה מחשבון, היא מסגרת חשיבה. כל שלב בונה על הקודם ומוביל להחלטה אחת ברורה: כן, לא, או ממשיכים לבחון.
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      <div class="reveal step">
+        <div class="step-num">01</div>
+        <div>
+          <h3 class="fs-h3 text-rf-white mb-1">הבן את העסקה</h3>
+          <p class="text-rf-soft text-sm leading-relaxed">מה בדיוק אתה שוקל לרכוש. מיקום גיאוגרפי, סוג הנכס, מאפייני השוק המקומי ומה מניע את הביקוש.</p>
+        </div>
+        <div class="step-ico" aria-hidden="true">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 105.5 5.5a7.5 7.5 0 0011.15 11.15z"/></svg>
+        </div>
+      </div>
+      <div class="reveal reveal-d1 step">
+        <div class="step-num">02</div>
+        <div>
+          <h3 class="fs-h3 text-rf-white mb-1">קרא את המספרים</h3>
+          <p class="text-rf-soft text-sm leading-relaxed">Cap rate, cash flow חודשי, GRM, gross yield. המדדים שמראים אם עסקה עומדת בפני עצמה.</p>
+        </div>
+        <div class="step-ico" aria-hidden="true">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13.5h3.5V21H3zM10.25 3h3.5v18h-3.5zM17.5 9H21v12h-3.5z"/></svg>
+        </div>
+      </div>
+      <div class="reveal reveal-d2 step">
+        <div class="step-num">03</div>
+        <div>
+          <h3 class="fs-h3 text-rf-white mb-1">בדוק את המימון</h3>
+          <p class="text-rf-soft text-sm leading-relaxed">DSCR, down payment, ריבית, מינוף. מימון לא נכון יכול להפוך עסקה טובה לגרועה. זו בדיקה קריטית.</p>
+        </div>
+        <div class="step-ico" aria-hidden="true">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M5 21V9.5L12 5l7 4.5V21M9.5 21v-5h5v5"/></svg>
+        </div>
+      </div>
+      <div class="reveal reveal-d3 step">
+        <div class="step-num">04</div>
+        <div>
+          <h3 class="fs-h3 text-rf-white mb-1">זהה את הסיכונים</h3>
+          <p class="text-rf-soft text-sm leading-relaxed">שוק, נכס, ניהול, אסטרטגיית יציאה. מה יכול להשתבש ובאיזו סבירות. לא להתעלם, לכמת.</p>
+        </div>
+        <div class="step-ico" aria-hidden="true">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l7 3.5V12c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6.5L12 3zM12 9v3.5m0 3h.01"/></svg>
+        </div>
+      </div>
+      <div class="reveal reveal-d4 step is-decision">
+        <div class="step-num">05</div>
+        <div>
+          <h3 class="fs-h3 text-rf-white mb-1">החלט: כן, לא, או המשך לבחון</h3>
+          <p class="text-rf-soft text-sm leading-relaxed">החלטה שנובעת מנתונים, לא מלחץ, לא מהשפעה, לא מתחושת בטן. זה הפלט של השיטה.</p>
+        </div>
+        <div class="step-ico" aria-hidden="true">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mid-page CTA -->
+    <div class="reveal mt-12 text-center">
+      <a href="https://my.schooler.biz/s/120577/EntryRFGlobal"
+   class="btn-primary btn-lg"
+   data-event="signup_click"
+   data-product="entry_course"
+   data-course="entry"
+   data-cta-location="method">
+  התחל בחינם
+</a>
+      <p class="text-rf-muted text-sm mt-3">השיעור הראשון נפתח עכשיו</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ COURSE CONTENT -->
+<section id="course" class="py-20 md:py-28 px-5" data-section="course">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-14 max-w-2xl">
+      <h2 class="reveal fs-h2 text-rf-white mb-5">
+        חמישה שיעורים. שיעור ביום.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="reveal rf-card is-interactive p-6">
+        <div class="icon-chip icon-chip-sm mb-4" aria-hidden="true">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 21V4m0 0l11 .5-2.5 4L16 13l-11-.5"/></svg>
+        </div>
+        <p class="eyebrow mb-3">שיעור 01</p>
+        <h3 class="fs-h3 text-rf-white mb-2">הקדמה</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">מי אנחנו, ואיך עובד השוק האמריקאי.</p>
+      </div>
+      <div class="reveal reveal-d1 rf-card is-interactive p-6">
+        <div class="icon-chip icon-chip-sm mb-4" aria-hidden="true">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.66 17h4.68M12 3a6 6 0 00-3.6 10.8c.5.37.85.95.9 1.6h5.4c.05-.65.4-1.23.9-1.6A6 6 0 0012 3z"/></svg>
+        </div>
+        <p class="eyebrow mb-3">שיעור 02</p>
+        <h3 class="fs-h3 text-rf-white mb-2">למה נדל"ן? ולמה אמריקה?</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">למה השוק הזה דווקא.</p>
+      </div>
+      <div class="reveal reveal-d2 rf-card is-interactive p-6">
+        <div class="icon-chip icon-chip-sm mb-4" aria-hidden="true">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M5 21V9.5L12 5l7 4.5V21M9.5 21v-5h5v5"/></svg>
+        </div>
+        <p class="eyebrow mb-3">שיעור 03</p>
+        <h3 class="fs-h3 text-rf-white mb-2">איך עסקה עובדת בפועל</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">הסוכן, המימון, ואיך מורכבת עסקה.</p>
+      </div>
+      <div class="reveal reveal-d3 rf-card is-interactive p-6">
+        <div class="icon-chip icon-chip-sm mb-4" aria-hidden="true">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13.5h3.5V21H3zM10.25 3h3.5v18h-3.5zM17.5 9H21v12h-3.5z"/></svg>
+        </div>
+        <p class="eyebrow mb-3">שיעור 04</p>
+        <h3 class="fs-h3 text-rf-white mb-2">חישוב של עסקה אמיתית</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">פותחים נכס אמיתי ומחשבים אותו מול העיניים.</p>
+      </div>
+      <div class="reveal reveal-d4 md:col-span-2 rf-card is-interactive p-6">
+        <div class="icon-chip icon-chip-sm mb-4" aria-hidden="true">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.5m0 3h.01M10.3 4.3L2.8 17.5A2 2 0 004.5 20.5h15a2 2 0 001.7-3L13.7 4.3a2 2 0 00-3.4 0z"/></svg>
+        </div>
+        <p class="eyebrow mb-3">שיעור 05</p>
+        <h3 class="fs-h3 text-rf-white mb-2">סיכום והטעויות הנפוצות</h3>
+        <p class="text-rf-soft text-sm leading-relaxed">במה מתבלבלים מתחילים, ואיך להימנע.</p>
+      </div>
+    </div>
+
+    <p class="reveal fs-lead mt-12 text-center">כל שיעור נפתח יום אחרי הקודם. בלי לשבת שעות בבת אחת.</p>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ WHO IT'S FOR -->
+<section id="audience" class="py-20 md:py-28 px-5" data-section="audience">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- For -->
+      <div>
+        <p class="reveal eyebrow mb-4">למי מיועד</p>
+        <h2 class="reveal reveal-d1 fs-h3 text-rf-white mb-7" style="font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800">
+          הקורס מתאים לך אם
+        </h2>
+        <div class="space-y-4">
+          <div class="reveal flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה משקיע ראשון</p>
+              <p class="text-rf-muted text-sm">אתה בשלב הלמידה ורוצה להבין את הבסיס לפני שאתה מוציא כסף.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d1 flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה מתעניין בשוק האמריקאי</p>
+              <p class="text-rf-muted text-sm">אתה מעוניין בנדל"ן בארה"ב אבל לא יודע כיצד לנתח עסקאות שם.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d2 flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">צרכת תוכן חינמי אבל נתקעת</p>
+              <p class="text-rf-muted text-sm">ראית הרבה סרטונים, אבל עדיין חסרה לך השיטה להגיע מנתון להחלטה.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d3 flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">הפחד מהטעות מונע ממך להתקדם</p>
+              <p class="text-rf-muted text-sm">אתה יודע שאתה רוצה להשקיע אבל חוסר הבהירות מחזיק אותך במקום.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d4 flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה רוצה מסגרת, לא עוד מידע</p>
+              <p class="text-rf-muted text-sm">אתה מחפש שיטת ניתוח ברורה, לא עוד מאמר שמסביר מה זה cap rate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Not for -->
+      <div class="rf-card p-7">
+        <p class="reveal eyebrow mb-4" style="color:var(--muted)">מה הקורס לא</p>
+        <h2 class="reveal reveal-d1 fs-h3 text-rf-white mb-7" style="font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800">
+          הקורס הזה לא מתאים אם
+        </h2>
+        <div class="space-y-4">
+          <div class="reveal flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה מחפש הבטחת תשואה</p>
+              <p class="text-rf-muted text-sm">RF Global לא מבטיח תשואות. הקורס מלמד ניתוח, לא ניבוי עתיד.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d1 flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה מחפש נדל"ן ללא הון עצמי</p>
+              <p class="text-rf-muted text-sm">השקעה בנדל"ן דורשת הון. הקורס מלמד ניתוח.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d2 flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה מחפש עושר מהיר</p>
+              <p class="text-rf-muted text-sm">אין כאן קיצורי דרך. זה קורס ניתוח, לא תוכנית להתעשרות מהירה.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d3 flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה מחפש תחליף לייעוץ מקצועי</p>
+              <p class="text-rf-muted text-sm">RF Global מספק חינוך בלבד. יש להתייעץ עם מומחים לפני כל השקעה.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-d4 flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            <div>
+              <p class="font-semibold text-rf-white">אתה מחפש טיפים חמים על עסקאות</p>
+              <p class="text-rf-muted text-sm">הקורס מלמד שיטת חשיבה, לא המלצות על עסקאות ספציפיות.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ FAQ -->
+<section id="faq" class="py-20 md:py-28 px-5" data-section="faq">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="reveal fs-h2 text-rf-white">
+        שאלות נפוצות
+      </h2>
+    </div>
+
+    <div class="space-y-3">
+      <!-- FAQ 1 -->
+      <div class="faq-item reveal">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-a1">
+          <span>כמה זמן זה לוקח?</span>
+          <svg class="faq-toggle-icon w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div id="faq-a1" class="faq-answer"><p class="px-5 pb-5 text-rf-soft leading-relaxed text-sm">שעה וחצי בסך הכול, מפוזרת על חמישה ימים.</p></div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item reveal reveal-d1">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-a2">
+          <span>צריך הון עצמי?</span>
+          <svg class="faq-toggle-icon w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div id="faq-a2" class="faq-answer"><p class="px-5 pb-5 text-rf-soft leading-relaxed text-sm">לא. הקורס הוא לימודי.</p></div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item reveal reveal-d2">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-a3">
+          <span>יש הבטחת תשואה?</span>
+          <svg class="faq-toggle-icon w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div id="faq-a3" class="faq-answer"><p class="px-5 pb-5 text-rf-soft leading-relaxed text-sm">אין. אף אחד לא יכול להבטיח לך תשואה.</p></div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item reveal reveal-d3">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-a4">
+          <span>אני לא מבין בנדל"ן, זה מתאים לי?</span>
+          <svg class="faq-toggle-icon w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <div id="faq-a4" class="faq-answer"><p class="px-5 pb-5 text-rf-soft leading-relaxed text-sm">כן. בשביל זה בדיוק הוא נבנה.</p></div>
+      </div>
+    </div>
+    <p class="reveal text-center text-rf-muted text-sm mt-12">דובר ערבית? <a href="https://rf-course.vercel.app/entry-ar" class="text-rf-gl">לגרסה בערבית</a></p>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ FOUNDERS -->
+<section id="founders" class="py-20 md:py-28 px-5" data-section="founders">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="reveal eyebrow is-centered mb-4">מי אנחנו</p>
+      <h2 class="reveal reveal-d1 fs-h2 text-rf-white mb-5">
+        מי עומד מאחורי זה
+      </h2>
+      <p class="reveal reveal-d2 fs-lead max-w-2xl mx-auto">
+        RF Global הוקמה ע״י רזי ופאדי, יזמי נדל״ן עם ניסיון ישיר באיתור, השבחה וניהול נכסים בארה״ב. אנחנו עובדים בגישה ממוקדת-נתונים, עם שותפויות מקומיות חזקות, ליצירת תהליך יעיל ושקוף מקצה לקצה.
+      </p>
+    </div>
+
+    <div class="rf-team-grid">
+      <div class="reveal rf-card rf-team-card">
+        <img src="assets/team/razi.jpg" alt="רזי, מייסד וסמנכ״ל השקעות ראשי" width="320" height="320" loading="lazy" decoding="async" class="rf-team-photo mb-4" />
+        <h3 class="fs-h3 text-rf-white mb-1">רזי</h3>
+        <p class="text-rf-muted text-sm">מייסד וסמנכ״ל השקעות ראשי</p>
+      </div>
+      <div class="reveal reveal-d1 rf-card rf-team-card">
+        <img src="assets/team/fadi.jpg" alt="פאדי, מייסד ומנהל תפעול" width="320" height="320" loading="lazy" decoding="async" class="rf-team-photo mb-4" />
+        <h3 class="fs-h3 text-rf-white mb-1">פאדי</h3>
+        <p class="text-rf-muted text-sm">מייסד ומנהל תפעול</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ PROJECTS -->
+<section id="projects" class="py-20 md:py-28 px-5" data-section="projects">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="reveal eyebrow is-centered mb-4">פרויקטים</p>
+      <h2 class="reveal reveal-d1 fs-h2 text-rf-white mb-5">
+        נכסים שעבדנו עליהם
+      </h2>
+      <p class="reveal reveal-d2 fs-lead max-w-2xl mx-auto">
+        כל אחד מהם איתרנו, שיפצנו, והשכרנו או מכרנו בארה״ב.
+      </p>
+    </div>
+
+    <div class="rf-proj-grid">
+      <div class="reveal rf-card rf-proj-card">
+        <img src="assets/projects/p1.jpg" alt="בית משופץ" width="800" height="600" loading="lazy" decoding="async" class="rf-proj-img" />
+        <div class="rf-proj-body">
+          <span class="text-rf-white font-bold text-sm">בית משופץ</span>
+          <span class="rf-status is-sold">נמכר</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d1 rf-card rf-proj-card">
+        <img src="assets/projects/p2.jpg" alt="דירה משופצת" width="800" height="600" loading="lazy" decoding="async" class="rf-proj-img" />
+        <div class="rf-proj-body">
+          <span class="text-rf-white font-bold text-sm">דירה משופצת</span>
+          <span class="rf-status is-sold">נמכר</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d2 rf-card rf-proj-card">
+        <img src="assets/projects/p3.jpg" alt="בית דו-קומתי" width="800" height="600" loading="lazy" decoding="async" class="rf-proj-img" />
+        <div class="rf-proj-body">
+          <span class="text-rf-white font-bold text-sm">בית דו-קומתי</span>
+          <span class="rf-status is-sold">נמכר</span>
+        </div>
+      </div>
+      <div class="reveal rf-card rf-proj-card">
+        <img src="assets/projects/p4.jpg" alt="בית משפחתי" width="800" height="600" loading="lazy" decoding="async" class="rf-proj-img" />
+        <div class="rf-proj-body">
+          <span class="text-rf-white font-bold text-sm">בית משפחתי</span>
+          <span class="rf-status is-rented">מושכר</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d1 rf-card rf-proj-card">
+        <img src="assets/projects/p5.jpg" alt="דירה" width="800" height="600" loading="lazy" decoding="async" class="rf-proj-img" />
+        <div class="rf-proj-body">
+          <span class="text-rf-white font-bold text-sm">דירה</span>
+          <span class="rf-status is-rented">מושכר</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d2 rf-card rf-proj-card">
+        <img src="assets/projects/p6.jpg" alt="בית מודרני" width="800" height="600" loading="lazy" decoding="async" class="rf-proj-img" />
+        <div class="rf-proj-body">
+          <span class="text-rf-white font-bold text-sm">בית מודרני</span>
+          <span class="rf-status is-rented">מושכר</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-line" />
+
+<!-- ═══════════════════════════════════════════════════════════ FINAL CTA -->
+<section id="final-cta" class="py-24 px-5" data-section="final-cta">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="reveal fs-h2 text-rf-white mb-10">
+      תתנסה קודם. תחליט אחרי כך.
+    </h2>
+
+    <div class="reveal reveal-d1 flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
+      <a href="https://my.schooler.biz/s/120577/EntryRFGlobal"
+   class="btn-primary btn-lg w-full sm:w-auto"
+   data-event="signup_click"
+   data-product="entry_course"
+   data-course="entry"
+   data-cta-location="final_cta">
+  התחל בחינם
+</a>
+    </div>
+
+    <p class="reveal text-rf-muted text-sm">
+      חמישה שיעורים. בלי לשלם שקל.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════ FOOTER -->
+<footer class="border-t border-[rgba(189,134,4,0.1)] py-12 px-5 bg-[rgba(1,9,6,0.6)]">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/logo-icon.jpg" alt="RF Global" width="40" height="36" loading="lazy" decoding="async" class="h-9 w-auto object-contain rounded" />
+        </div>
+        <p class="text-rf-soft text-sm max-w-xs leading-relaxed mb-4">
+          מערכת קבלת החלטות בנדל"ן אמריקאי, מבוססת ניתוח, לא הבטחות.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/rf.global/" aria-label="Instagram" target="_blank" rel="noopener" class="text-rf-muted hover:text-rf-gl transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/people/RF-Global-Real-Estate-Investments/100093468674023/" aria-label="Facebook" target="_blank" rel="noopener" class="text-rf-muted hover:text-rf-gl transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://rf-course.vercel.app/" aria-label="אתר RF Global" target="_blank" rel="noopener" class="text-rf-muted hover:text-rf-gl transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <nav aria-label="ניווט תחתון">
+        <div class="flex flex-wrap gap-x-8 gap-y-3">
+          <a href="#method" class="text-rf-soft text-sm hover:text-rf-white transition-colors">השיטה</a>
+          <a href="#course" class="text-rf-soft text-sm hover:text-rf-white transition-colors">הקורס</a>
+          <a href="#faq"    class="text-rf-soft text-sm hover:text-rf-white transition-colors">שאלות</a>
+          <a href="https://rf-course.vercel.app/entry-ar" class="text-rf-soft text-sm hover:text-rf-gl transition-colors">عربي</a>
+        </div>
+        <div class="footer-legal-links">
+          <a href="privacy.html">מדיניות פרטיות</a>
+          <a href="terms.html">תנאי שימוש</a>
+          <a href="refunds.html">מדיניות החזרים</a>
+          <a href="accessibility.html">נגישות</a>
+          <button type="button" data-cookie-manage>העדפות עוגיות</button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Legal -->
+    <div class="border-t border-[rgba(189,134,4,0.08)] pt-8">
+      <p class="text-rf-muted text-xs leading-relaxed max-w-3xl">
+        <strong class="text-rf-soft font-semibold">הצהרת גילוי נאות:</strong> RF Global מספק תוכן חינוכי בלבד בנושא השקעות נדל"ן. שום תוכן בקורס זה אינו מהווה ייעוץ פיננסי, משפטי, מיסויי או השקעתי. תשואות עבר אינן מעידות על תשואות עתיד. כל השקעה כרוכה בסיכון, לרבות אובדן קרן. לפני כל צעד השקעה יש לפנות ליועץ פיננסי, עורך דין ורואה חשבון מוסמכים.
+      </p>
+      <p class="text-rf-muted text-xs mt-3 opacity-70">© 2026 RF Global. כל הזכויות שמורות.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════ COOKIE CONSENT BANNER -->
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="הודעת עוגיות">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">
+      אנחנו משתמשים בעוגיות כדי לשפר את חוויית השימוש, למדוד ביצועים ולהפעיל מדידה שיווקית. ניתן לאשר, לדחות או לנהל העדפות.
+    </p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-accept>אישור</button>
+      <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-reject>דחייה</button>
+      <button type="button" class="cookie-btn cookie-btn-manage" data-cookie-manage>ניהול העדפות</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ COOKIE PREFERENCES MODAL -->
+<div id="cookie-modal" class="cookie-modal-overlay" role="dialog" aria-modal="true" aria-label="העדפות עוגיות">
+  <div class="cookie-modal">
+    <div class="cookie-modal-header">
+      <h2 class="cookie-modal-title">העדפות עוגיות</h2>
+      <button type="button" class="cookie-modal-close" data-cookie-modal-close aria-label="סגור">✕</button>
+    </div>
+    <div class="cookie-modal-body">
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <span class="cookie-category-label">הכרחיות</span>
+          <span class="cookie-category-status">פעילות תמיד</span>
+        </div>
+        <p class="cookie-category-desc">נדרשות לתפקוד בסיסי של האתר. תמיד פעילות.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <span class="cookie-category-label">אנליטיקה</span>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="cookie-analytics" />
+            <span class="cookie-toggle-track"></span>
+          </label>
+        </div>
+        <p class="cookie-category-desc">עוזרות לנו להבין כיצד משתמשים באתר כדי לשפר אותו.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <span class="cookie-category-label">שיווק</span>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="cookie-marketing" />
+            <span class="cookie-toggle-track"></span>
+          </label>
+        </div>
+        <p class="cookie-category-desc">מאפשרות מדידה שיווקית והתאמת מודעות.</p>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-modal-close>ביטול</button>
+      <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-save>שמירה</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ STICKY MOBILE CTA -->
+<div id="sticky-cta"
+     class="fixed bottom-0 inset-x-0 z-30 md:hidden opacity-0 translate-y-full pointer-events-none"
+     aria-hidden="true">
+  <div class="bg-[rgba(1,9,6,0.97)] border-t border-[rgba(189,134,4,0.2)] backdrop-blur-md px-4 py-3">
+    <a href="https://my.schooler.biz/s/120577/EntryRFGlobal"
+   class="btn-primary w-full text-base text-center"
+   style="padding:16px"
+   data-event="signup_click"
+   data-product="entry_course"
+   data-course="entry"
+   data-cta-location="sticky"
+   aria-label="התחל את קורס Entry בחינם">
+  התחל בחינם
+</a>
+    <p class="text-center text-xs text-rf-muted mt-1.5">חמישה שיעורים · שיעור ביום</p>
+  </div>
+</div>
+
+<script src="assets/js/tracking.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
