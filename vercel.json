@@ -3,6 +3,8 @@
   "rewrites": [
     { "source": "/", "destination": "/index-he.html" },
     { "source": "/entry", "destination": "/index-he.html" },
-    { "source": "/entry-ar", "destination": "/index-ar.html" }
+    { "source": "/entry-ar", "destination": "/index-ar.html" },
+    { "source": "/welcome", "destination": "/welcome-he.html" },
+    { "source": "/welcome-ar", "destination": "/welcome-ar.html" }
   ]
 }
